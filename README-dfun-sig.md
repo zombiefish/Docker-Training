@@ -16,7 +16,7 @@ The task is to create a Dockerfile for each, as well as a docker-compose.-yaml t
 
 api/Dockerfile
 
-'''sh
+```bash
 FROM maven:latest AS appserver
 COPY . .
 RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
@@ -26,12 +26,12 @@ RUN adduser -Dh /home/gordon gordon
 COPY --from=appserver /target/ddev-0.0.1-SNAPSHOT.jar .
 ENTRYPOINT ["java", "-jar", "/ddev-0.0.1-SNAPSHOT.jar"]
 CMD ["--spring.profiles.active=postgres"]
-'''
+```
 
 
 database/Dockerfile
 
-'''sh
+```bash
 FROM postgres:9.6
 
 ENV  POSTGRES_USER gordonuser
@@ -44,18 +44,19 @@ RUN  mkdir -p /docker-entrypoint-initdb.d
 COPY init-db.sql /docker-entrypoint-initdb.d/
 
 EXPOSE 5432
-'''
+```
 
 ui/Dockerfile
 
-'''sh
+```bash
 FROM node:8-alpine
 COPY . .
 RUN npm install
-'''
+```
 
 docker-compose.yaml
-'''yaml
+
+```yaml
 version: "3.1"
 
 services:
@@ -80,4 +81,4 @@ services:
 networks:
   front-end:
   back-end:
-'''
+```
