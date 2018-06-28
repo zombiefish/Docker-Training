@@ -2,7 +2,10 @@
 
 The signature application is a short exercise that should take no longer than a few hours. Unfortunately, we never have enough time in class to full go through the exercise.  I hope you can spare enough time to give the application a shot, as it does replicate a real world applicatin quite well.
 
-The first step is to clone the got repository locally.
+
+The ["Signature Application Instructions"](containerizing-an-application.md) are here in detail.
+
+The first step is to clone the git repository locally.
 
 ```bash
 # git clone -b ee2.0 https://github.com/docker-training/fundamentals-final.git
