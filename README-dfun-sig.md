@@ -14,7 +14,7 @@ The task is to create a Dockerfile for each, as well as a docker-compose.-yaml t
 
 
 
-api/Dockerfile
+`api/Dockerfile`
 
 ```bash
 FROM maven:latest AS appserver
@@ -29,7 +29,7 @@ CMD ["--spring.profiles.active=postgres"]
 ```
 
 
-database/Dockerfile
+`database/Dockerfile`
 
 ```bash
 FROM postgres:9.6
@@ -46,7 +46,7 @@ COPY init-db.sql /docker-entrypoint-initdb.d/
 EXPOSE 5432
 ```
 
-ui/Dockerfile
+`ui/Dockerfile`
 
 ```bash
 FROM node:8-alpine
@@ -54,7 +54,7 @@ COPY . .
 RUN npm install
 ```
 
-docker-compose.yaml
+`docker-compose.yaml`
 
 ```yaml
 version: "3.1"
