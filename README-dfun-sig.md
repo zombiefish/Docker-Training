@@ -4,9 +4,9 @@ The signature application is a short exercise that should take no longer than a 
 
 The first step is to clone the got repository locally.
 
-'''sh
-git clone -b ee2.0 https://github.com/docker-training/fundamentals-final.git
-'''
+```bash
+# git clone -b ee2.0 https://github.com/docker-training/fundamentals-final.git
+```
 
 You will find three directories in ths bundle, api, database and ui.
 
