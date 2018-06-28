@@ -4,7 +4,7 @@ The signature application is a short exercise that should take no longer than a 
 
 The first step is to clone the got repository locally.
 
-'''bash
+'''sh
 git clone -b ee2.0 https://github.com/docker-training/fundamentals-final.git
 '''
 
@@ -16,7 +16,7 @@ The task is to create a Dockerfile for each, as well as a docker-compose.-yaml t
 
 api/Dockerfile
 
-'''bash
+'''sh
 FROM maven:latest AS appserver
 COPY . .
 RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
@@ -31,7 +31,7 @@ CMD ["--spring.profiles.active=postgres"]
 
 database/Dockerfile
 
-'''bash
+'''sh
 FROM postgres:9.6
 
 ENV  POSTGRES_USER gordonuser
@@ -48,7 +48,7 @@ EXPOSE 5432
 
 ui/Dockerfile
 
-'''bash
+'''sh
 FROM node:8-alpine
 COPY . .
 RUN npm install
